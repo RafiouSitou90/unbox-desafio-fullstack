@@ -1,0 +1,11 @@
+.movies-container {
+    top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.genres-container {
+    top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
