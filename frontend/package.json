@@ -47,9 +47,7 @@
   "devDependencies": {
     "@types/react-router-dom": "^5.1.6",
     "eslint": "^7.15.0",
-    "eslint-config-prettier": "^7.0.0",
     "eslint-plugin-prettier": "^3.2.0",
-    "eslint-plugin-react": "^7.21.5",
     "prettier": "^2.2.1"
   }
 }

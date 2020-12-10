@@ -1,13 +1,9 @@
 {
-  "extends": [
-    "eslint:recommended",
-    "plugin:prettier/recommended",
-    "prettier/flowtype",
-    "prettier/react",
-    "plugin:react/recommended"
-  ],
-  "plugins": ["prettier"],
+  "extends": ["react-app", "eslint:recommended"],
+  "plugins": ["prettier", "react-hooks"],
   "rules": {
-    "prettier/prettier": "error"
+    "prettier/prettier":  ["error",{
+      "endOfLine": "auto"}
+    ]
   }
 }
