@@ -4,7 +4,7 @@ import { Banner, MovieList } from '../../../components'
 const Trending = () => {
 	return (
 		<div className="container mt-5">
-			<Banner mediaType="movies" />
+			<Banner mediaType="series" />
 			<div className="movies-container">
 				<MovieList mediaType="movies" movieType="trending" />
 			</div>
