@@ -32,4 +32,6 @@ Open [http://localhost:8000/api/series/discover](http://localhost:8000/api/serie
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-
+## Run backend tests
+	cd backend/
+	php bin/phpunit
