@@ -19,7 +19,6 @@ const Movies = () => {
 
 		await api.post('movies/search', formData).then((response) => {
 			setMovies(response.data.results)
-			console.log(response)
 		})
 	}
 

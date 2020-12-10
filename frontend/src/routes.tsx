@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { Header } from './components'
-import { Movies } from './pages'
+import { Details, Movies } from './pages'
 
 const Routes = () => {
 	return (
@@ -10,7 +10,7 @@ const Routes = () => {
 			<Switch>
 				<Route path="/" exact component={Movies} />
 				<Route path="/movies" exact component={Movies} />
-				{/*<Route path="/movies/details/:id" component={Details} />*/}
+				<Route path="/movies/details/:id" component={Details} />
 				{/*<Route path="/movies/discover" component={Discover} />*/}
 				{/*<Route path="/movies/trending" component={Trending} />*/}
 				{/*<Route path="/movies/genres" component={Genres} />*/}
