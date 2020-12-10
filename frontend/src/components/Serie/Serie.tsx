@@ -1,18 +1,18 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import './style.css'
+import '../Movie/style.css'
 
-interface MovieData {
+interface SerieData {
 	poster_path?: string
 	adult: boolean
 	overview: string
-	release_date: string
+	first_air_date: string
 	genre_ids: Array<number>
 	id: number
-	original_title: string
+	original_name: string
 	original_language: string
-	title: string
+	name: string
 	backdrop_path?: string
 	popularity: number
 	vote_count: number
@@ -21,7 +21,7 @@ interface MovieData {
 }
 
 export interface MovieProps {
-	movie: MovieData
+	movie: SerieData
 	mediaType: string
 }
 
@@ -39,14 +39,8 @@ const setVoteClassName = (vote: number) => {
 	}
 }
 
-const Movie = ({ movie, mediaType }: MovieProps) => {
-	const {
-		id,
-		title,
-		poster_path,
-		vote_average,
-		release_date,
-	} = movie as MovieData
+const Serie = ({ movie, mediaType }: MovieProps) => {
+	const { id, name, poster_path, vote_average, first_air_date } = movie
 	return (
 		<div className="card movie mx-auto mb-5">
 			<Link to={`/${mediaType}/details/${id}`}>
@@ -57,15 +51,15 @@ const Movie = ({ movie, mediaType }: MovieProps) => {
 							? IMG_API_URL + poster_path
 							: DEFAULT_IMAGE_URL
 					}
-					alt={title}
+					alt={name}
 				/>
 			</Link>
 			<div className="card-body">
 				<h2 className="card-title movie-title">
-					<Link to={`/movies/details/${id}`}>{title}</Link>
+					<Link to={`/series/details/${id}`}>{name}</Link>
 				</h2>
 				<div className="movie-info">
-					<p>{release_date}</p>
+					<p>{first_air_date}</p>
 					<span
 						className={`tag tag-${setVoteClassName(vote_average)}`}
 					>
@@ -77,4 +71,4 @@ const Movie = ({ movie, mediaType }: MovieProps) => {
 	)
 }
 
-export default Movie
+export default Serie

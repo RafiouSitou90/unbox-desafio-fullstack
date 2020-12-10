@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 
-import { Banner, Loading, Movie, Title } from '../../components'
+import { Banner, Loading, Serie, Title } from '../../components'
 import { api } from '../../services'
 
 interface SearchFormData {
 	search: string
 }
 
-const Movies = () => {
+const Series = () => {
 	const { register, handleSubmit, formState } = useForm()
 	const { isSubmitting } = formState
 	const [movies, setMovies] = useState([])
@@ -17,15 +17,15 @@ const Movies = () => {
 		const formData = new FormData()
 		formData.append('title', search)
 
-		await api.post('movies/search', formData).then((response) => {
+		await api.post('series/search', formData).then((response) => {
 			setMovies(response.data.results)
 		})
 	}
 
 	return (
 		<div className="container mt-5">
-			<Banner mediaType="movies" />
-			<Title title="Search movies by title" />
+			<Banner mediaType="series" />
+			<Title title="Search series by title" />
 			<div className="mt-3 mb-5 col-12">
 				<form className="form-inline" onSubmit={handleSubmit(onSubmit)}>
 					<input
@@ -49,7 +49,7 @@ const Movies = () => {
 			) : (
 				<div className="movies-container">
 					{movies.map((movie: any, index) => (
-						<Movie key={index} movie={movie} mediaType="movies" />
+						<Serie key={index} movie={movie} mediaType="series" />
 					))}
 				</div>
 			)}
@@ -57,4 +57,4 @@ const Movies = () => {
 	)
 }
 
-export default Movies
+export default Series

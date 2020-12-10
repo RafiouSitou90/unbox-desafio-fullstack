@@ -29,7 +29,7 @@ const MovieList = ({ mediaType, movieType }: MovieListProps) => {
 	return (
 		<>
 			{movies.map((movie: any, index) => (
-				<Movie key={index} {...movie} />
+				<Movie key={index} movie={movie} mediaType={mediaType} />
 			))}
 		</>
 	)
